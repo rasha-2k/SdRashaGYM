@@ -2,5 +2,136 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["ShowHeader"] = true;
 }
+ <style>
+    /* General Table Styles */
+    .btn-primary {
+        color: #fff;
+        background-color: #ff4040;
+        border-color: #ff4040
+    }
 
-<h1>Users List</h1>
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #ff4040;
+            border-color: #ff4040
+        }
+    .table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 8px; /* Adds space between rows */
+        font-family: Arial, sans-serif;
+        background-color: #2c2f33; /* Dark background for the table */
+        margin: 20px 0;
+    }
+    body{
+
+        font-family: Arial, sans-serif;
+        background-color: #1d1f26;
+        color: #fff;
+    }
+
+        /* Table Header */
+        .table thead tr {
+        background-color: #ff4040; /* Blue header color */
+            text-align: left;
+        }
+
+        .table thead th {
+            padding: 10px 20px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Table Body */
+        .table tbody tr {
+            background-color: #33373d; /* Darker rows */
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .table tbody tr:hover {
+            background-color: #3e444b; /* Row hover color */
+        }
+
+        .table tbody td {
+            padding: 10px 15px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        /* ID Column */
+        .table tbody tr td:first-child {
+            font-weight: bold;
+        }
+
+        /* Style Buttons */
+        /*
+        .table tbody tr td:last-child {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .table tbody tr td:last-child .btn {
+            background-color: #ff4d4d; 
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        */
+
+ </style> 
+ 
+ @model List<User> 
+ <div class="container">
+     <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2>Users List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Users" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-person-plus"></i>
+                Add User
+            </a>
+        </div>
+     </div>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            User Name
+        </th>
+        <th>
+            Display Password
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model.OrderBy(u=>u.Id)){
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.Username</td>
+                <td>@obj.Password</td>
+                <td>
+                    <div class"w-btn-group" role="group">
+                        <a asp-controller="Users" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                Edit
+                            </a>
+                            <a asp-controller="Users" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                Delete
+                            </a>
+                        </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    </table>
+</div>
