@@ -3,24 +3,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["ShowHeader"] = false;
 }
-@* 
-<form method="post">
-    <div class="border p-3 mt-4">
-        <div class="row pb-2">
-            <h2 class="text-primary">Add User</h2>
-            <hr/>
-        </div>
-        <div class="mb-3">
-            <label>username</label>
-            <input type="text" class="form-control" />
-        </div>        
-        <div class="mb-3">
-            <label>Password</label>
-            <input type="text" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">Add</button>
-    </div>
-</form> *@
 
 <style>
     /* General styling */
@@ -36,21 +18,21 @@
     }
 
     /* Center the signup container */
-    .signup-container {
+    .form-container {
         background-color: #2b2f38;
         padding: 20px 40px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         width: 500px;
-        height: 500px;
+        height: 600px;
         text-align: center;
         margin: auto;
     }
 
     /* Logo container */
     .logo-container {
-        margin-bottom: 150px;
-        height: 50px
+        margin-bottom: 20px;
+        height: 50px;
     }
 
     .logo {
@@ -58,7 +40,7 @@
         height: auto;
     }
 
-    .signup-title {
+    .form-title {
         font-size: 24px;
         margin-bottom: 20px;
         font-weight: bold;
@@ -67,7 +49,7 @@
     }
 
     /* Form styling */
-    .signup-form {
+    .form-form {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -115,7 +97,7 @@
         }
 
     /* Button styling */
-    .signup-button {
+    .submit-button {
         background-color: #ff4040;
         color: #fff;
         border: none;
@@ -126,8 +108,8 @@
         transition: background-color 0.3s;
     }
 
-        .signup-button:hover {
-            color:#fff;
+        .submit-button:hover {
+            color: #fff;
             background-color: #e03535;
         }
 
@@ -136,37 +118,60 @@
         color: #ff4040;
         margin-top: 10px;
     }
-
 </style>
-<div class="signup-container">
+
+<div class="form-container">
     <div class="logo-container">
         <img src="~/Assets/Images/1-removebg-preview.png" alt="Logo" class="logo">
     </div>
-    <h2 class="signup-title">Sign Up</h2>
-    <form method="post" class="signup-form">
+    <h2 class="form-title">Sign Up</h2>
+    <form method="post" class="form-form">
         <div class="input-group">
             <label for="username">
                 <i class="fas fa-user"></i>
             </label>
-            <input asp-for="Username" type="text" id="username" name="username" placeholder="Username" required>
-
+            <input asp-for="UserName" type="text" id="username" name="username" placeholder="UserName" required>
         </div>
+
+        <div class="input-group">
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input asp-for="Email" type="email" id="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="input-group">
+            <label for="fullname">
+                <i class="fas fa-user"></i>
+            </label>
+            <input asp-for="FullName" type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+        </div>
+
+
+        <div class="input-group">
+            <label for="phone">
+                <i class="fas fa-phone"></i>
+            </label>
+            <input asp-for="PhoneNumber" type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        </div>
+
         <div class="input-group">
             <label for="password">
                 <i class="fas fa-lock"></i>
             </label>
-            <input asp-for="Password" type="password" id="password" name="password" placeholder="Password" required>
+            <input asp-for="PasswordHash" type="password" id="password" name="password" placeholder="Password" required>
         </div>
-@*         <div class="options">
-            <a asp-action="ForgotPassword" asp-controller="Login" class="forgot-password">Forgot password?</a>
-        </div> *@
+
+        <div class="options">
+            <a asp-action="Index" asp-controller="Home" class="login">Already have an account? Login</a>
+        </div>
+
         <div class="row">
             <div class="col-6">
-                <button type="submit" class="signup-button form-control">Add</button>
-
+                <button type="submit" class="submit-button form-control">Sign Up</button>
             </div>
             <div class="col-6">
-                <a asp-controller="Users" asp-action="Index" class="signup-button form-control" style="text-decoration: none">Back to List</a>
+                <a asp-controller="Users" asp-action="Index" class="submit-button form-control" style="text-decoration: none">Back to List</a>
             </div>
         </div>
     </form>
@@ -175,5 +180,3 @@
         <p class="error-message">@ViewBag.Error</p>
     }
 </div>
-
-

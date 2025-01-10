@@ -1,13 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SdRashaGYMV2.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
-        public required string Username { get; set; }
-        [Required]
-        public required string Password { get; set; }
+       
+
+        [StringLength(100)]
+        public string? FullName { get; set; }
+
+        public DateTime? DateOfBirth { get; set; }
+
+        public bool? IsMale { get; set; }
+
+        [StringLength(500)]
+        public string? Description { get; set; }
+
     }
 }

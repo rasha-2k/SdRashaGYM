@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Package List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["ShowHeader"] = true;
+}
+ <style>
+         body {
+        background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        /* margin: 0; */
+        font-family: Arial, sans-serif;
+
+    }
+    /* General Table Styles */
+    .btn-primary {
+        color: #fff;
+        background-color: #ff4040;
+        border-color: #ff4040
+    }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #ff4040;
+            border-color: #ff4040
+        }
+        .table {
+            width: 100%;
+            /* /* border-collapse: separate; */ */
+
+            border-radius:25%;
+            font-family: Arial, sans-serif;
+            background-color: #2c2f33; /* Dark background for the table */
+            margin: 20px 0;
+        }
+        body{
+
+            font-family: Arial, sans-serif;
+            background-color: #1d1f26;
+            color: #fff;
+        }
+
+        /* Table Header */
+        .table thead tr {
+        background-color: #ff4040; /* Blue header color */
+            text-align: left;
+        }
+
+        .table thead th {
+            padding: 10px 20px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Table Body */
+        .table tbody tr {
+            background-color: #33373d;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .table tbody tr:hover {
+            background-color: #3e444b;
+        }
+
+        .table tbody td {
+            padding: 10px 15px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        /* ID Column */
+        .table tbody tr td:first-child {
+            font-weight: bold;
+        }
+
+ </style> 
+ @model List<Package> 
+ <div class="container">
+     <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2>Available Packages</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Home" asp-action="AddPackage" class="btn btn-primary">
+                <i class="bi bi-person-plus"></i>
+                Add Package
+            </a>
+        </div>
+     </div>
+@if (Model == null || !Model.Any())
+{
+    <p>No Packages available to display.</p>
+}
+else
+{
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Package Name</th>
+        <th>Duration</th>
+        <th>Price</th>
+        <th>Days</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model.OrderBy(u=>u.Id)){
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.PackageName</td>
+                <td>@obj.Duration</td>
+                <td>@(obj.Price+"$")</td>
+                <td>@obj.Days</td>
+                <td>@obj.Description</td>
+                <td>
+                    <div class"w-btn-group" role="group">
+                        <a asp-controller="Home" asp-action="EditPackage" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                Edit
+                            </a>
+                            <a asp-controller="Home" asp-action="DeletePackage" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                Delete
+                            </a>
+                        </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    </table>
+}
+</div>

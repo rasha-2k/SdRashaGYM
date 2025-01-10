@@ -1,0 +1,96 @@
+﻿﻿@using SdRashaGYMV2.ViewModels;
+@model LoginViewModel;
+
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    ViewData["Title"] = "Login";
+}
+@* @model SdRashaGYMV2.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["ShowHeader"] = false;
+} *@
+<style>
+    /* General styling */
+    body {
+        background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        /* margin: 0; */
+        font-family: Arial, sans-serif;
+        background-color: #1d1f26;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+        /* Button styling */
+    .submit-button {
+        background-color: #ff4040;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .submit-button:hover {
+            color: #fff;
+            background-color: #e03535;
+        }
+</style>
+<div class="form-container">
+    <div class="logo-container">
+        <img src="~/Assets/Images/1-removebg-preview.png" alt="Logo" class="logo">
+    </div>
+    <h2 class="form-title">Login</h2>
+    <form asp-action="Login" method="post" class="form-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <label asp-for="Email" class="form-label d-flex align-items-center">
+                <i class="fas fa-user me-2"></i>
+            </label>
+            <input asp-for="Email" type="text" placeholder="Email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="input-group mb-3">
+            <label asp-for="Password" class="form-label d-flex align-items-center">
+                <i class="fas fa-lock me-2"></i>
+            </label>
+            <input asp-for="Password" type="password" placeholder="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="options">
+            <label>
+                <input asp-for="RememberMe" type="checkbox" name="remember">
+                @Html.DisplayNameFor(a=> a.RememberMe)
+            </label>
+            <a asp-controller="Account" asp-action="VerifyEmail" class="signup">Forgot password?</a>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Login" class="submit-button w-100 p-2" />
+            </div>
+            <div class="col-6">
+                <a asp-controller="Home" asp-action="Index" class="submit-button form-control text-decoration-none w-100 p-2">Back</a>
+            </div>
+        </div>
+        <p class="text-center mt-2">
+            Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none">Register</a>
+        </p>
+    </form>
+    @if (ViewBag.Error != null)
+    {
+        <p class="error-message">@ViewBag.Error</p>
+    }
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+

@@ -26,7 +26,6 @@ C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SdRashaGYMV2.props
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SdRashaGYMV2.props
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\SdRashaGYMV2.dll
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\refint\SdRashaGYMV2.dll
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\SdRashaGYMV2.pdb
@@ -288,3 +287,6 @@ C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\bin\Debug\net8.0\BouncyCastle.Crypto.dll

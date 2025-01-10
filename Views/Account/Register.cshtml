@@ -1,0 +1,136 @@
+﻿﻿@using SdRashaGYMV2.ViewModels;
+@model RegisterViewModel;
+
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    ViewData["Title"] = "Register";
+}
+<style>
+    /* General styling */
+    body {
+        background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        /* margin: 0; */
+        font-family: Arial, sans-serif;
+        background-color: #1d1f26;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+        .submit-button {
+        background-color: #ff4040;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .submit-button:hover {
+            color: #fff;
+            background-color: #e03535;
+        }
+        input, textarea, select {
+            background-color: transparent; 
+            border: none;
+        }
+        select:focus-visible {
+            outline: none;
+            }
+
+        input::placeholder,
+        textarea::placeholder, select::placeholder {
+            opacity: 1; 
+        }
+
+</style>
+<div class="form-container">
+    <div class="logo-container">
+        <img src="~/Assets/Images/1-removebg-preview.png" alt="Logo" class="logo">
+    </div>
+    <h2 class="form-title">Register</h2>
+    <form asp-action="Register" method="post" class="form-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>       
+        <div class="input-group">  
+            <label asp-for="Name" class="form-label d-flex align-items-center">
+                <i class="fas fa-user me-2"></i>
+            </label>
+            <input asp-for="Name" placeholder="Name" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+         <div class="input-group">
+            <label asp-for="Email" class="form-label d-flex align-items-center">
+                <i class="fas fa-envelope me-2"></i>
+            </label>
+            <input asp-for="Email" placeholder="Email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <label asp-for="DateOfBirth" class="form-label d-flex align-items-center">
+                <i class="fas fa-calendar-alt me-2"></i>
+            </label>
+            <input asp-for="DateOfBirth" type="date">
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <label asp-for="IsMale" class="form-label d-flex align-items-center">
+                <i class="fas fa-venus-mars me-2"></i>
+            </label>
+            <select asp-for="IsMale" class="form-control" style="background-color: #404452;color: #fff !important;border:none;">
+                <option value="">Select Gender</option>
+                <option value="true">Male</option>
+                <option value="false">Female</option>
+            </select>
+            <span asp-validation-for="IsMale" class="text-danger"></span>
+        </div>
+       
+        <div class="input-group">
+            <label asp-for="Description" class="form-label d-flex align-items-center">
+                <i class="fas fa-align-left me-2"></i>
+            </label>
+            <textarea asp-for="Description" placeholder="Write a short description about yourself" style="background-color: transparent;width: 90%" rows="1"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <label asp-for="Password" class="form-label d-flex align-items-center">
+                <i class="fas fa-lock me-2"></i>
+            </label>
+            <input asp-for="Password" type="password" placeholder="Password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="input-group">
+            <label asp-for="ConfirmPassword" class="form-label d-flex align-items-center">
+                <i class="fas fa-lock me-2"></i>
+            </label>
+            <input asp-for="ConfirmPassword" type="password" placeholder="Confirm Password" required>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Register" class="submit-button w-100 p-2" />
+            </div>
+            <div class="col-6">
+                <a asp-controller="Home" asp-action="Index" class="btn submit-button form-control text-decoration-none w-100 p-2">Back</a>
+            </div>
+        </div>           
+        <p class="text-center mt-2">
+            Already have an account? <a asp-controller="Account" asp-action="Login" class="text-decoration-none">Login</a>
+        </p>
+    </form>
+    @if (ViewBag.Error != null)
+    {
+        <p class="error-message">@ViewBag.Error</p>
+    }
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+

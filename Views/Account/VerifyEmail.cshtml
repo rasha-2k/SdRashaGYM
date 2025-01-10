@@ -1,0 +1,74 @@
+﻿﻿@using SdRashaGYMV2.ViewModels;
+@model VerifyEmailViewModel;
+
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    ViewData["Title"] = "Verify Email";
+}
+
+<style>
+    /* General styling */
+    body {
+        background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        /* margin: 0; */
+        font-family: Arial, sans-serif;
+        background-color: #1d1f26;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+        .submit-button {
+        background-color: #ff4040;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .submit-button:hover {
+            color: #fff;
+            background-color: #e03535;
+        }
+</style>
+<div class="form-container">
+    <div class="logo-container">
+        <img src="~/Assets/Images/1-removebg-preview.png" alt="Logo" class="logo">
+    </div>
+    <h2 class="form-title">Verify Email</h2>
+    <form asp-action="VerifyEmail" method="post" class="form-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group">
+            <label asp-for="Email" class="form-label d-flex align-items-center">
+                <i class="fas fa-user me-2"></i>
+            </label>
+            <input asp-for="Email" type="text" id="email" name="email" placeholder="Email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="submit" value="Verify" class="submit-button w-100 p-2" />
+            </div>
+            <div class="col-6">
+                <a asp-controller="Home" asp-action="Index" class="submit-button form-control text-decoration-none w-100 p-2">Back</a>
+            </div>
+        </div>    
+        </form>
+    @if (ViewBag.Error != null)
+    {
+        <p class="error-message">@ViewBag.Error</p>
+    }
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}
+
