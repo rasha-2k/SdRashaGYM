@@ -1,9 +1,10 @@
-﻿@model SdRashaGYMV2.ViewModels.PackageViewModel 
+﻿@model SdRashaGYMV2.ViewModels.PackageViewModel
 @{
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
     ViewData["Title"] = "Add Package";
 }
 <style>
+
     body {
         background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
         background-size: cover;
@@ -16,29 +17,14 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+
     }
 
-    .submit-button {
-        background-color: #ff4040;
+    .btn-primary {
         color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+        border: none
     }
 
-    .submit-button:hover {
-        color: #fff;
-        background-color: #e03535;
-    }
-
-    input, textarea, select {
-        background-color: transparent; 
-        border: none;
-    }
-   
     .checkbox-container {
         display: flex;
         flex-wrap: wrap;
@@ -69,9 +55,9 @@
         <img src="~/Assets/Images/1-removebg-preview.png" alt="Logo" class="logo">
     </div>
     <h2 class="form-title">Add Package</h2>
-    <form asp-action="AddPackage" method="post" class="form-form">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <!-- Package Name -->
+    <form method="post" class="form-form">
+@*         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+ *@        <!-- Package Name -->
         <div class="input-group">
             <label asp-for="PackageName" class="form-label d-flex align-items-center">
                 <i class="fas fa-box me-2"></i>
@@ -79,7 +65,6 @@
             <input asp-for="PackageName" placeholder="Package Name" required>
             <span asp-validation-for="PackageName" class="text-danger"></span>
         </div>
-
         <!-- Duration -->
         <div class="input-group">
             <label asp-for="Duration" class="form-label d-flex align-items-center">
@@ -108,28 +93,20 @@
                     <input type="checkbox" id="@day" name="SelectedDays" value="@day">
                     <label for="@day">@day</label>
                 }
-                <span asp-validation-for="SelectedDays" class="text-danger"></span>
-
+                <span asp-validation-for="Days" class="text-danger"></span>
             </div>
         </div>
 
         <!-- Description -->
-        <div class="input-group mb-3">
+        <div class="input-group">
             <label asp-for="Description" class="form-label d-flex align-items-center">
                 <i class="fas fa-align-left me-2"></i>
             </label>
             <textarea asp-for="Description" placeholder="Description (optional)" style="width: 90%;" rows="2"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
-
-        <div class="row">
-            <div class="col-6">
-                <input type="submit" value="Save Package" class="submit-button w-100 p-2" />
-            </div>
-            <div class="col-6">
-                <a asp-controller="Home" asp-action="PackageList" class="btn submit-button form-control text-decoration-none w-100 p-2">Back</a>
-            </div>
-        </div>
+        <input type="submit" value="Add Package" class="btn btn-danger w-100 p-2" />
+        <a asp-controller="Home" asp-action="PackageList" class="btn btn-primary">Back</a>
     </form>
 </div>
 

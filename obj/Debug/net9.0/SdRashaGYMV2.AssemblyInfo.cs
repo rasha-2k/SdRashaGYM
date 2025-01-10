@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SdRashaGYMV2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed25b0a52dc6827ecf5c1ccfef76afca8954f6ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfe7d50053d81b5376edd564a3cf439c748627b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SdRashaGYMV2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SdRashaGYMV2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

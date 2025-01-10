@@ -18,9 +18,9 @@ namespace SdRashaGYMV2.Controllers
         // Action to display the package list
         public IActionResult PackageList()
         {
-            var packages = _context.Packages.ToList(); // Retrieve all packages from the database
-            return View(packages); // Pass the list to the view
-        }
+            List<Package> objPackageList = _context.Packages.ToList(); 
+            return View(objPackageList);
+        }  
         public IActionResult Index()
         {
             return View();
@@ -37,40 +37,29 @@ namespace SdRashaGYMV2.Controllers
 
         public IActionResult AddPackage()
         {
-            return View(new PackageViewModel()); 
+            return View(); 
         }
 
 
         [HttpPost]
-        public IActionResult AddPackage(PackageViewModel model)
+        public IActionResult AddPackage(PackageViewModel obj)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                foreach (var error in errors)
-                {
-                    Console.WriteLine(error); // Debug log
-                }
-                return View(model);
-            }
-
-
-            string selectedDays = string.Join(",", model.SelectedDays ?? new List<string>());
+            string selectedDays = string.Join(",", obj.SelectedDays ?? new List<string>());
 
             Package package = new Package
             {
-                PackageName = model.PackageName,
-                Duration = model.Duration,
-                Price = model.Price,
+                PackageName = obj.PackageName,
+                Duration = obj.Duration,
+                Price = obj.Price,
                 Days = selectedDays,
-                Description = model.Description
+                Description = obj.Description
             };
 
             _context.Packages.Add(package);
             _context.SaveChanges();
             TempData["Success"] = "Package Added Successfully!";
 
-            return RedirectToAction("PackageList", "Home");
+            return RedirectToAction("PackageList","Home");
         }
 
         public IActionResult EditPackage(int id)
@@ -107,11 +96,12 @@ namespace SdRashaGYMV2.Controllers
             {
                 return NotFound();
             }
+            string selectedDays = string.Join(",", model.SelectedDays ?? new List<string>());
 
             package.PackageName = model.PackageName;
             package.Duration = model.Duration;
             package.Price = model.Price;
-            package.Days = model.Days;
+            package.Days = selectedDays;
             package.Description = model.Description;
 
             _context.Packages.Update(package);

@@ -22,21 +22,11 @@
         align-items: center;
         height: 100vh;
     }
-        .submit-button {
-        background-color: #ff4040;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
 
-        .submit-button:hover {
-            color: #fff;
-            background-color: #e03535;
-        }
+    .btn-primary {
+        color: #fff;
+        border: none
+    }
 </style>
 <div class="form-container">
     <div class="logo-container">
@@ -49,15 +39,15 @@
             <label asp-for="Email" class="form-label d-flex align-items-center">
                 <i class="fas fa-user me-2"></i>
             </label>
-            <input asp-for="Email" type="text" id="email" name="email" placeholder="Email" required>
+            <input asp-for="Email" type="text" placeholder="Email" required>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="row">
             <div class="col-6">
-                <input type="submit" value="Verify" class="submit-button w-100 p-2" />
+                <input type="submit" value="Verify" class="btn btn-danger w-100 p-2" />
             </div>
             <div class="col-6">
-                <a asp-controller="Home" asp-action="Index" class="submit-button form-control text-decoration-none w-100 p-2">Back</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary form-control text-decoration-none w-100 p-2">Back</a>
             </div>
         </div>    
         </form>

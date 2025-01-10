@@ -279,7 +279,6 @@ C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\k6x4ci7f6m-ab1c3rmv7g.gz
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\g1l2ac0jez-u3xrusw2ol.gz
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\56eciw0h43-56d2bn4wt9.gz
-C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\p4xihcpiye-mpyigms19s.gz
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\m3gm1jivq6-73kdqttayv.gz
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\b76krx1nov-bpk8xqwxhs.gz
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\99b5ubehwz-8inm30yfxf.gz
@@ -329,4 +328,5 @@ C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\SdRashaGYMV2.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\ref\SdRashaGYMV2.dll
 C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\0p18921o5b-3r8b2a0bt1.gz
+C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\0p18921o5b-ksuo1j5lbk.gz
+C:\Users\HP\OneDrive\Desktop\My Projects\SdRashaGYMV2\SdRashaGYMV2\obj\Debug\net9.0\compressed\p4xihcpiye-kaznkt9f34.gz

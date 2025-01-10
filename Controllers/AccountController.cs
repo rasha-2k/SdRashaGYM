@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SdRashaGYMV2.Models;
 using SdRashaGYMV2.ViewModels;
-using SdRashaGYMV2.Data;
 
 namespace SdRashaGYMV2.Controllers
 {
@@ -20,7 +19,6 @@ namespace SdRashaGYMV2.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -35,14 +33,12 @@ namespace SdRashaGYMV2.Controllers
                 }
                 else
                 {
-                    //ModelState.AddModelError("", "Email or password is incorrect.");
-                    TempData["Error"] = "Invalid email or password!";
+                    TempData["Error"] = "Email or password is incorrect!";
                     return View(model);
                 }
             }
             return View(model);
         }
-
         public IActionResult Register()
         {
             return View();
@@ -68,13 +64,13 @@ namespace SdRashaGYMV2.Controllers
                 if (result.Succeeded)
                 {
                     TempData["Success"] = "User Registered Successfully!";
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Index", "Users");
                 }
                 else
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError("", error.Description);
+                        TempData["Error"] = error.Description;
                     }
 
                     return View(model);
@@ -97,7 +93,6 @@ namespace SdRashaGYMV2.Controllers
 
                 if (user == null)
                 {
-                    ModelState.AddModelError("", "Something is wrong!");
                     TempData["Error"] = "Something is wrong!";
                     return View(model);
                 }
@@ -137,7 +132,7 @@ namespace SdRashaGYMV2.Controllers
 
                         foreach (var error in result.Errors)
                         {
-                            ModelState.AddModelError("", error.Description);
+                            TempData["Error"] = error.Description;
                         }
 
                         return View(model);
@@ -145,14 +140,12 @@ namespace SdRashaGYMV2.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Email not found!");
                     TempData["Error"] = "Email not found!";
                     return View(model);
                 }
             }
             else
             {
-                ModelState.AddModelError("", "Something went wrong. try again.");
                 TempData["Error"] = "Something went wrong. try again";
                 return View(model);
             }

@@ -19,9 +19,9 @@ namespace SdRashaGYMV2.ViewModels
 
         [Required]
         public string? Days { get; set; }
-        public List<string> SelectedDays { get; set; }
+        public List<string> SelectedDays { get; set; } = new List<string>();
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
     }
 }

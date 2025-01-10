@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SdRashaGYMV2.Data;
 
@@ -11,9 +12,11 @@ using SdRashaGYMV2.Data;
 namespace SdRashaGYMV2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250110142914_minor")]
+    partial class minor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,29 +185,12 @@ namespace SdRashaGYMV2.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Packages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Days = "Sunday, Monday",
-                            Duration = "30",
-                            PackageName = "Test Package",
-                            Price = 100m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Days = "Tuesday, Wednesdsy",
-                            Duration = "60",
-                            PackageName = "Test2 Package",
-                            Price = 200m
-                        });
                 });
 
             modelBuilder.Entity("SdRashaGYMV2.Models.User", b =>

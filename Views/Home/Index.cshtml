@@ -1,10 +1,17 @@
-﻿@* @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-} *@
-<!-- Background Image Div -->
-<div class="background-image"></div>
+﻿<div class="background-image"></div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
 <!-- CSS -->
 <style>
+    * {
+        scrollbar-color: #ff4040 #1d1f26;
+        scroll-behavior: smooth;
+    }
     /* Reset body styles */
     body {
         margin: 0;
@@ -96,8 +103,6 @@
 
     .card-button {
         display: inline-block;
-        background-color: #ff4040;
-        color: #fff;
         padding: 10px 20px;
         border-radius: 5px;
         text-decoration: none;
@@ -105,11 +110,11 @@
         transition: background-color 0.3s;
     }
 
-        .card-button:hover {
-            background-color: #e03535;
-        }
+    .btn-primary {
+        color: #fff;
+        border: none
+    }
 </style>
-
 <!-- Main Content -->
 <div class="main-container">
     <div class="header">
@@ -122,16 +127,28 @@
             <i class="fas fa-users card-icon"></i>
             <h3>Manage Users</h3>
             <p>View, add, and manage gym users.</p>
-            <a asp-controller="Account" asp-action="Register" class="card-button">Add User</a>
-            <a asp-controller="Users" asp-action="Index" class="card-button">View Data</a>
+            <div class="row">
+                <div class="col-6">
+                    <a asp-controller="Account" asp-action="Register" class="card-button btn  btn-danger w-100 p-2">Add User</a>
+                </div>
+                <div class="col-6">
+                    <a asp-controller="Users" asp-action="Index" class="card-button btn btn-primary w-100 p-2">View Data</a>
+                </div>
+            </div>
         </div>
 
         <div class="card">
             <i class="fas fa-dumbbell card-icon"></i>
             <h3>Manage Packages</h3>
             <p>Customize membership packages for users.</p>
-            <a asp-controller="Home" asp-action="AddPackage" class="card-button">Add Package</a>
-            <a asp-controller="Home" asp-action="PackageList" class="card-button">View Data</a>
+            <div class="row">
+                <div class="col-6">
+                    <a asp-controller="Home" asp-action="AddPackage" class="card-button btn btn-danger w-100 p-2">Add Package</a>
+                </div>
+                <div class="col-6">
+                    <a asp-controller="Home" asp-action="PackageList" class="card-button btn btn-primary w-100 p-2">View Data</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

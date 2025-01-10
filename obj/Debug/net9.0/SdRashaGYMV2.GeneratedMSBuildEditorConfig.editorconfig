@@ -48,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRQYWNrYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/OneDrive/Desktop/My Projects/SdRashaGYMV2/SdRashaGYMV2/Views/Home/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/HP/OneDrive/Desktop/My Projects/SdRashaGYMV2/SdRashaGYMV2/Views/Home/DeletePackage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVQYWNrYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,10 +82,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/OneDrive/Desktop/My Projects/SdRashaGYMV2/SdRashaGYMV2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/HP/OneDrive/Desktop/My Projects/SdRashaGYMV2/SdRashaGYMV2/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/OneDrive/Desktop/My Projects/SdRashaGYMV2/SdRashaGYMV2/Views/Users/Delete.cshtml]

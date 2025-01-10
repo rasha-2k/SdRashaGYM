@@ -21,24 +21,26 @@
         align-items: center;
         height: 100vh;
     }
-        .submit-button {
-        background-color: #ff4040;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+
+    .form-container {
+        background-color: #2b2f38;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        width: 500px;
+        height: 830px;
+        text-align: center;
+        margin: auto;
     }
 
-        .submit-button:hover {
-            color: #fff;
-            background-color: #e03535;
-        }
+    .btn-primary {
+        color: #fff;
+        border: none
+    }
         input, textarea, select {
             background-color: transparent; 
             border: none;
+            color: #fff;
         }
         select:focus-visible {
             outline: none;
@@ -62,7 +64,6 @@
                 <i class="fas fa-user me-2"></i>
             </label>
             <input asp-for="Name" placeholder="Name" required>
-            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
          <div class="input-group">
             <label asp-for="Email" class="form-label d-flex align-items-center">
@@ -113,10 +114,10 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <input type="submit" value="Register" class="submit-button w-100 p-2" />
+                <input type="submit" value="Register" class="btn btn-danger w-100 p-2" />
             </div>
             <div class="col-6">
-                <a asp-controller="Home" asp-action="Index" class="btn submit-button form-control text-decoration-none w-100 p-2">Back</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary form-control text-decoration-none w-100 p-2">Back</a>
             </div>
         </div>           
         <p class="text-center mt-2">

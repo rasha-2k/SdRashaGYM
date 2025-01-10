@@ -18,7 +18,7 @@ namespace SdRashaGYMV2.ViewModels
         public required decimal? Price { get; set; }
 
         public string? Days { get; set; }
-        public List<string> SelectedDays { get; set; }
+        public List<string> SelectedDays { get; set; } = new List<string>();
 
 
         [StringLength(500)]

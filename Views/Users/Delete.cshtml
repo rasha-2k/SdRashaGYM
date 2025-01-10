@@ -7,6 +7,10 @@
 <style>
     /* General styling */
     body {
+        background-image: url('https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
         margin: 0;
         font-family: Arial, sans-serif;
         background-color: #1d1f26;
@@ -96,22 +100,10 @@
             margin-right: 5px;
         }
 
-    /* Button styling */
-    .submit-button {
-        background-color: #ff4040;
+    .btn-primary {
         color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+        border: none
     }
-
-        .submit-button:hover {
-            color: #fff;
-            background-color: #e03535;
-        }
 
     /* Error message styling */
     .error-message {
@@ -143,10 +135,10 @@
 
         <div class="row">
             <div class="col-6">
-                <button type="submit" class="submit-button form-control btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger  w-100 p-2">Delete</button>
             </div>
             <div class="col-6">
-                <a asp-controller="Users" asp-action="Index" class="submit-button form-control" style="text-decoration: none">Back to List</a>
+                <a asp-controller="Users" asp-action="Index" class="btn btn-primary form-control" style="text-decoration: none">Back to List</a>
             </div>
         </div>
     </form>

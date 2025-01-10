@@ -22,7 +22,7 @@ namespace SdRashaGYMV2.Models
         public required decimal? Price { get; set; }
 
         [Required]
-        public string Days { get; set; }
+        public string? Days { get; set; }
 
         [StringLength(500)]
         public string? Description { get; set; } // (optional)

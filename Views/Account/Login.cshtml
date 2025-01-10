@@ -1,15 +1,9 @@
 ﻿﻿@using SdRashaGYMV2.ViewModels;
 @model LoginViewModel;
-
 @{
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
     ViewData["Title"] = "Login";
 }
-@* @model SdRashaGYMV2.Models.User
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["ShowHeader"] = false;
-} *@
 <style>
     /* General styling */
     body {
@@ -26,22 +20,10 @@
         align-items: center;
         height: 100vh;
     }
-        /* Button styling */
-    .submit-button {
-        background-color: #ff4040;
+    .btn-primary {
         color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+        border: none
     }
-
-        .submit-button:hover {
-            color: #fff;
-            background-color: #e03535;
-        }
 </style>
 <div class="form-container">
     <div class="logo-container">
@@ -50,14 +32,14 @@
     <h2 class="form-title">Login</h2>
     <form asp-action="Login" method="post" class="form-form">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="input-group mb-3">
+        <div class="input-group">
             <label asp-for="Email" class="form-label d-flex align-items-center">
                 <i class="fas fa-user me-2"></i>
             </label>
             <input asp-for="Email" type="text" placeholder="Email" required>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group">
             <label asp-for="Password" class="form-label d-flex align-items-center">
                 <i class="fas fa-lock me-2"></i>
             </label>
@@ -73,10 +55,10 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <input type="submit" value="Login" class="submit-button w-100 p-2" />
+                <input type="submit" value="Login" class="btn btn-danger w-100 p-2" />
             </div>
             <div class="col-6">
-                <a asp-controller="Home" asp-action="Index" class="submit-button form-control text-decoration-none w-100 p-2">Back</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary form-control text-decoration-none w-100 p-2">Back</a>
             </div>
         </div>
         <p class="text-center mt-2">
