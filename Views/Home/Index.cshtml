@@ -41,7 +41,7 @@
         z-index: 1;
         padding: 20px;
         max-width: 1200px;
-        margin: 20px;
+        margin: 20px auto;
         text-align: center;
         border-radius: 10px;
     }
@@ -60,6 +60,7 @@
         .header p {
             font-size: 18px;
             color: black;
+
         }
 
     /* Dashboard Styling */
@@ -67,6 +68,8 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
+        justify-content: center; /* Center horizontally */
+        align-content: center; /* Center vertically */
     }
 
     .card {
@@ -101,14 +104,6 @@
         margin-bottom: 20px;
     }
 
-    .card-button {
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-size: 16px;
-        transition: background-color 0.3s;
-    }
 
     .btn-primary {
         color: #fff;

@@ -44,7 +44,7 @@ namespace SdRashaGYMV2.Controllers
         [HttpPost]
         public IActionResult AddPackage(PackageViewModel obj)
         {
-            string selectedDays = string.Join(",", obj.SelectedDays ?? new List<string>());
+            string selectedDays = string.Join(", ", obj.SelectedDays ?? new List<string>());
 
             Package package = new Package
             {
@@ -58,7 +58,6 @@ namespace SdRashaGYMV2.Controllers
             _context.Packages.Add(package);
             _context.SaveChanges();
             TempData["Success"] = "Package Added Successfully!";
-
             return RedirectToAction("PackageList","Home");
         }
 
@@ -96,7 +95,7 @@ namespace SdRashaGYMV2.Controllers
             {
                 return NotFound();
             }
-            string selectedDays = string.Join(",", model.SelectedDays ?? new List<string>());
+            string selectedDays = string.Join(", ", model.SelectedDays ?? new List<string>());
 
             package.PackageName = model.PackageName;
             package.Duration = model.Duration;

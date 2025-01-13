@@ -2,7 +2,7 @@
 @inject SignInManager<User> signInManager;
 
 <ul class="navbar-nav ms-auto">
-    @if (signInManager.IsSignedIn(User))
+@*     @if (signInManager.IsSignedIn(User))
     {
         <li class="nav-item">
             <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
@@ -16,6 +16,6 @@
         <li class="nav-item">
             <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
         </li>
-    }
+    } *@
     
 </ul>
