@@ -11,16 +11,6 @@
 
 ---
 
-## Table of Contents
-- [Overview](#-overview)
-- [Features](#-features)
-- [Technologies Used](#️-technologies-used)
-- [Getting Started](#-getting-started)
-- [User Interface](#-user-interface)
-- [Contributors](#-contributors)
-
----
-
 ## Overview
 
 Gym owners often face difficulties managing memberships and packages through paper-based or inefficient systems. SdRasha GYM aims to solve this problem by providing a centralized platform for handling users, gym packages, and instructors. Although it’s a course-based prototype, it serves as a foundational example of how modern management systems can be designed using robust database technologies and clean architecture.
