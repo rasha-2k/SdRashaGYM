@@ -1,13 +1,15 @@
 ![License](https://img.shields.io/github/license/rasha-2k/PackTrack?color=blue)
 ---
 
-![alt text](wwwroot/Assets/Images/logo.png)
-
----
-
 # SdRasha GYM
 
 **SdRasha GYM** is a CRUD-based Gym Management System built with **.NET Core (C#)** and **SQL Server**. It was developed as a final project for the "Database Programming" course at the Faculty of Information Technology, designed to demonstrate practical database and software development skills. This system provides gym owners with a user-friendly dashboard to manage clients and packages efficiently, replacing traditional manual methods.
+
+---
+
+<p align="center">
+  <img src="wwwroot/Assets/Images/logo.png" alt="logo" width="500"/>
+</p>
 
 ---
 
